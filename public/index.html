@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en" dir="ltr" ng-app="myapp" ng-controller="CsmHighchartsCtrl">
+
+  <head>
+	
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+		
+		<meta name="description" content="Main Dashboard v2.0" />
+		<meta name="author" content="rykn0wxx" />
+
+		<title>rykn0wxx | mudhead</title>
+
+    <link rel="stylesheet" ng-href="../css/bootstrap.css" />
+		<link rel="stylesheet" ng-href="../css/fontawesome.css" />
+		<link rel="stylesheet" ng-href="custom.css" />
+
+	</head>
+  <body>
+
+
+		<div class="wrapper">
+			<header class="main-header">
+				<div class="container-fluid">
+					<nav class="navbar navbar-default">
+						<div class="container-fluid">
+							<div class="navbar-header">
+								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+									<span class="sr-only">Toggle navigation</span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+								</button>
+								<a class="navbar-brand" href="#">Brand</a>
+							</div>
+
+							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+								<ul class="nav navbar-nav">
+									<li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+									<li><a href="#">Link</a></li>
+								</ul>
+								<ul class="nav navbar-nav navbar-right">
+									<li><a href="#">Link</a></li>
+								</ul>
+							</div>
+						</div>
+					</nav>
+				</div>
+			</header>
+			<div class="content-wrapper">
+				<div class="content">
+					<div class="page-header">
+						<h4>Main Content</h4>
+					</div>
+					<div custom-panels></div>
+
+					<!-- servicedesk -->
+					<section class="servicedesk boxlinked wrap-content off display-none">
+						<div class="row">
+							<div class="col-sm-12 pd-1">
+								<highchart id="chart1" config="chartConfig" class="chart"></highchart>
+							</div>
+						</div>
+					</section>
+					<!-- deskside -->
+					<section class="deskside boxlinked wrap-content off display-none">
+						<div class="row">
+							<div class="col-sm-12 pd-1">
+								<highchart id="chart1" config="chartConfig" class="chart"></highchart>
+							</div>
+						</div>
+					</section>
+					<!-- baseservices -->
+					<section class="baseservices boxlinked wrap-content off display-none">
+						<div class="row">
+							<div class="col-sm-12 pd-1">
+								<highchart id="chart1" config="chartConfig" class="chart"></highchart>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+		</div>
+
+
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/angular.min.js"></script>
+		<script type="text/javascript" src="../js/d3.min.js"></script>
+		<script type="text/javascript" src="../js/lodash.js"></script>
+		<script type="text/javascript" src="../js/highcharts.js"></script>
+		<script type="text/javascript" src="../js/ng-highcharts.js"></script>
+		<script type="text/javascript" src="../js/global.js"></script>
+		<script type="text/javascript" src="custom.js"></script>
+		
+</body>
+</html>
+
+
+<!-- <script src="assets/miso1.min.js"></script> -->
