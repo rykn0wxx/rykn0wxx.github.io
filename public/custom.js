@@ -63,7 +63,7 @@ angular.module('myapp', ['highcharts-ng'])
 	$scope.enableCtrlPanel = true;
 
 	$scope.init = function () {
-		d3.csv('../datasource/incdata.csv', function(inc) {
+		d3.csv('../datasource/inc.csv', function(inc) {
 			inc.forEach(function(d, i) {
 				d.rowIndex = i;
 			});
