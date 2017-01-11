@@ -1,0 +1,22 @@
+{
+  "name": "rykn0wxx.github.io",
+  "version": "1.0.0",
+  "description": "kpi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rykn0wxx/rykn0wxx.github.io.git"
+  },
+  "keywords": [
+    "kpi"
+  ],
+  "author": "rykn0wxx",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rykn0wxx/rykn0wxx.github.io/issues"
+  },
+  "homepage": "https://github.com/rykn0wxx/rykn0wxx.github.io#readme"
+}
