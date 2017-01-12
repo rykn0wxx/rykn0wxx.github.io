@@ -1,0 +1,94 @@
+{
+  "name": "rykn0wxx.github.io",
+  "description": "kpi",
+  "main": "index.js",
+  "authors": [
+    "rykn0wxx"
+  ],
+  "appPath": "app",
+  "moduleName": "mudhead",
+  "host": "localhost",
+  "port": "1983",
+  "live": "35728",
+  "license": "ISC",
+  "keywords": [
+    "kpi"
+  ],
+  "homepage": "https://github.com/rykn0wxx/rykn0wxx.github.io",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "resolutions": {
+    "jquery": "1.9.1 - 2",
+    "d3": "3.x"
+  },
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "angular": "^1.6.1",
+    "angular-animate": "^1.6.1",
+    "angular-route": "^1.6.1",
+    "angular-aria": "^1.6.1",
+    "angular-cookies": "^1.6.1",
+    "angular-material": "^1.1.1",
+    "angular-file-upload": "^2.4.1",
+    "moment": "^2.17.1",
+    "moment-timezone": "^0.5.11",
+    "lodash": "^4.17.4",
+    "bootstrap-daterangepicker": "^2.1.24",
+    "d3": "^4.4.1",
+    "dcjs": "^2.0.0",
+    "highcharts": "^5.0.6",
+    "highcharts-ng": "^0.0.13",
+    "js-xlsx": "^0.8.1",
+    "jvectormap": "^2.0.4",
+    "font-awesome": "^4.7.0",
+    "angular-resource": "^1.6.1"
+  },
+  "overrides": {
+    "angular-file-upload": {
+      "main": [
+        "dist/angular-file-upload.js"
+      ]
+    },
+    "js-xlsx": {
+      "main": [
+        "jszip.js",
+        "xlsx.js",
+        "dist/ods.js",
+        "dist/csv2json.js",
+        "dist/cpexcel.js",
+        "dist/vkbeautify.js"
+      ]
+    },
+    "moment": {
+      "main": [
+        "min/moment-with-locales.js"
+      ]
+    },
+    "highcharts": {
+      "main": [
+        "highstock.src.js",
+        "highcharts-more.src.js",
+        "modules/data.src.js",
+        "modules/exporting.src.js",
+        "modules/offline-exporting.src.js",
+        "modules/drilldown.src.js"
+      ]
+    },
+    "jvectormap": {
+      "main": [
+        "jquery.jvectormap.min.js",
+        "jquery-jvectormap-continents-mill.js",
+        "jquery-jvectormap.css"
+      ]
+    }
+  },
+  "devDependencies": {
+    "bootstrap-less": "^3.3.4"
+  }
+}

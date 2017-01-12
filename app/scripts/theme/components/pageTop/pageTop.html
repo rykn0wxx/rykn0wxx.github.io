@@ -1,0 +1,21 @@
+<md-toolbar class="glow-z1 app-content-toolbar"  max-height="50" scroll-position="scrolled" ng-class="{'scrolled': scrolled}">
+
+  <div class="md-toolbar-tools app-toolbar-tools" tabIndex="-1">
+
+    <section class="app-creator" ng-class="{'hsmall':isSmall, 'nothsmall':!isSmall}">
+      <h3 class="md-headline" md-colors="{color: 'indigo-A100'}"  >
+        CSM
+        <small ng-hide="isSmall" class="subheadline" md-colors="{color: 'indigo-100'}" ng-class="{'tosmall':isSmall, 'notsmall':!isSmall}">Automation</small>
+      </h3>
+    </section>
+
+
+    <md-button class="md-icon-button launch" aria-label="Dashboard" ng-href="/">
+      <md-icon><i class="fa fa-bars"></i></md-icon>
+    </md-button>
+
+    <span flex flex-gt-sm="70"></span>
+
+  </div>
+
+</md-toolbar>

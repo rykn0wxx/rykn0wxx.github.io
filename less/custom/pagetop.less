@@ -1,0 +1,68 @@
+// Paget top specifics
+
+.rykn0wxx {
+  .wrapper {
+    .app-content-toolbar {
+      min-height: 50px;
+      max-height: 50px;
+      .app-toolbar-tools {
+        position: relative;
+        height: 50px;
+        max-height: 50px;
+        box-shadow: 0px 20px 25px -10px rgba(0, 0, 0, 0.2);
+      }
+      .app-creator {
+        line-height: 50px;
+        position: relative;
+        &.hsmall {
+          text-align: center;
+        }
+        .subheadline {
+          position: relative;
+          transition: all 1s ease-in-out;
+          animation-duration: 1s;
+          animation-fill-mode: both;
+          &.tosmall {
+            animation-name: outFadeSlideLeft;
+            &::before, &::after {
+              content: ' ';
+            }
+          }
+          &.notsmall {
+            animation-name: inFadeSlideRight;
+          }
+        }
+        .md-headline {
+          font-weight: 500;
+
+        }
+        small {
+          font-size: 0.8em;
+        }
+      }
+    }
+  }
+}
+
+@keyframes inFadeSlideRight {
+  from {
+    transform: translate3d(100%, 0, 0);
+    opacity: 0;
+
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes outFadeSlideLeft {
+  from {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+    transform: translate3d(-100%, 0, 0);
+  }
+}

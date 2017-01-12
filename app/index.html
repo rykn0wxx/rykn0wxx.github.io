@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en-US" class="csm" ng-app="mudhead" ng-controller="MudCtrl as mud" ng-cloak="true">
+  <head>
+    <base ng-href="/" />
+    <meta name="description" content="rykn0wxx" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>rykn0wxx</title>
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap-daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" href="bower_components/dcjs/dc.css" />
+    <link rel="stylesheet" href="bower_components/jvectormap/jquery-jvectormap.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/kohana.css" />
+    <!-- endbuild -->
+  </head>
+  <body class="rykn0wxx">
+
+
+
+    <!-- Application content here -->
+		<div class="wrapper" layout="row">
+
+      <div layout="column" tabIndex="-1" role="main" flex>
+
+        <page-top></page-top>
+
+        <md-content md-scroll-y  layout="column" flex="" class="content-wrapper">
+
+          <section class="content" style="min-height:400px;">
+            <md-button ng-click="isSmall = !isSmall">asd</md-button>
+          </section>
+
+        </md-content>
+
+      </div>
+
+    </div>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="bower_components/angular-file-upload/dist/angular-file-upload.js"></script>
+    <script src="bower_components/moment/min/moment-with-locales.js"></script>
+    <script src="bower_components/moment-timezone/builds/moment-timezone-with-data-2010-2020.js"></script>
+    <script src="bower_components/lodash/lodash.js"></script>
+    <script src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="bower_components/d3/d3.js"></script>
+    <script src="bower_components/crossfilter2/crossfilter.min.js"></script>
+    <script src="bower_components/dcjs/dc.js"></script>
+    <script src="bower_components/highcharts/highstock.src.js"></script>
+    <script src="bower_components/highcharts/highcharts-more.src.js"></script>
+    <script src="bower_components/highcharts/modules/data.src.js"></script>
+    <script src="bower_components/highcharts/modules/exporting.src.js"></script>
+    <script src="bower_components/highcharts/modules/offline-exporting.src.js"></script>
+    <script src="bower_components/highcharts/modules/drilldown.src.js"></script>
+    <script src="bower_components/highcharts-ng/dist/highcharts-ng.js"></script>
+    <script src="bower_components/js-xlsx/jszip.js"></script>
+    <script src="bower_components/js-xlsx/xlsx.js"></script>
+    <script src="bower_components/js-xlsx/dist/ods.js"></script>
+    <script src="bower_components/js-xlsx/dist/cpexcel.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/theme/components/mud-components.js"></script>
+    <script src="scripts/theme/components/pageTop/pageTop.directive.js"></script>
+    <script src="scripts/theme/directives/scrollPosition.js"></script>
+    <script src="scripts/mudhead.js"></script>
+    <script src="scripts/MudCtrl.js" charset="utf-8"></script>
+    <!-- endbuild -->
+
+  </body>
+</html>
