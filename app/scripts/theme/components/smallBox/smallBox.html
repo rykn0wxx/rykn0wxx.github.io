@@ -1,0 +1,15 @@
+<div flex-gt-sm="30" flex="25" ng-repeat="box in boxInfo">
+  <div class="small-box" ng-style="{'background': box.bg}">
+    <div class="inner">
+      <h3 class="md-headline">{{ box.data.GL }}</h3>
+      <p class="md-body-2">{{ box.name }}</p>
+    </div>
+    <div class="icon">
+      <i class="fa {{ box.icon }}"></i>
+    </div>
+    <a href="#" class="small-box-footer">
+      More info
+      <i class="fa fa-arrow-circle-right"></i>
+    </a>
+  </div>
+</div>

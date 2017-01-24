@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-US" class="csm" ng-app="mudhead" ng-controller="MudCtrl as mud" ng-cloak="true">
   <head>
-    <base ng-href="/" />
+
     <meta name="description" content="rykn0wxx" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
@@ -16,28 +16,82 @@
     <link rel="stylesheet" href="bower_components/bootstrap-daterangepicker/daterangepicker.css" />
     <link rel="stylesheet" href="bower_components/dcjs/dc.css" />
     <link rel="stylesheet" href="bower_components/jvectormap/jquery-jvectormap.css" />
+    <link rel="stylesheet" href="bower_components/ng-sortable/dist/ng-sortable.css" />
     <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="bower_components/animate.css/animate.min.css" />
     <link rel="stylesheet" href="styles/kohana.css" />
     <!-- endbuild -->
+    <script type="text/javascript">
+      var pth = window.location.pathname;
+      document.write(
+        '<base href="' + pth + '" />'
+      );
+    </script>
   </head>
   <body class="rykn0wxx">
 
 
 
     <!-- Application content here -->
-		<div class="wrapper" layout="row">
+
+    <!-- Application:start wrapper -->
+		<div class="wrapper" layout="row" layout-fill>
+
+      <!-- Application start: sidenav -->
+      <md-sidenav id="666" class="app-side-nav md-sidenav-left" md-component-id="666" md-whiteframe="8" md-is-locked-open="$mdMedia('gt-sm')">
+
+        <!-- Application: start sidenav left panel-->
+        <header class="nav-header">
+          <a ng-href="#!/one" class="app-logo" flex layout-padding layout="column" layout-align="center center">
+            <img src="images/stef-logo.png" alt="" class="header-img" />
+            <h4 class="md-heading">Automation</h4>
+          </a>
+        </header>
+        <!-- Application: start sidenav left panel-->
+        <ul class="skip-links">
+          <li class="md-whiteframe-z2">
+            <md-button ng-click="focusMainContent($event)" href="#">Skip to content</md-button>
+          </li>
+        </ul>
+        <!-- Application: start sidenav left menus-->
+        <md-content class="nav-content" flex role="navigation">
+
+          <ul class="main-menu">
+            <li class="parent-item {{section.className || ''}}" ng-repeat="section in menu.sections" ng-class="{'parentActive' : isSectionSelected(section)}">
+              <h4 class="menu-heading md-subhead" ng-if="section.type === 'heading'" id="heading_{{ section.name | nospace }}">
+                {{section.name}}
+              </h4>
+              <menu-link section="section" ng-if="section.type === 'link' && !section.hidden"></menu-link>
+              <menu-toggle section="child" ng-if="child.type === 'toggle'"></menu-toggle>
+
+              <ul ng-if="section.children" class="menu-nested-list">
+                <li ng-repeat="child in section.children" ng-class="{'childActive' : isSectionSelected(child)}">
+                  <menu-link section="child" ng-if="child.type === 'link'"></menu-link>
+
+                  <menu-toggle section="child" ng-if="child.type === 'toggle'"></menu-toggle>
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+        </md-content>
+        <!-- Application: end sidenav left menus-->
+
+      </md-sidenav>
 
       <div layout="column" tabIndex="-1" role="main" flex>
 
         <page-top></page-top>
 
-        <md-content md-scroll-y  layout="column" flex="" class="content-wrapper">
+        <md-content md-scroll-y  layout-fill layout="column" flex="" class="content-wrapper">
+          <md-button class="md-warn" ng-href="#!/two">TWO</md-button>
+          <section class="content">
 
-          <section class="content" style="min-height:400px;">
-            <md-button ng-click="isSmall = !isSmall">asd</md-button>
+            <div class="app-view" ng-view></div>
+
           </section>
 
         </md-content>
@@ -54,6 +108,8 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-aria/angular-aria.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="bower_components/angular-messages/angular-messages.js"></script>
     <script src="bower_components/angular-material/angular-material.js"></script>
     <script src="bower_components/angular-file-upload/dist/angular-file-upload.js"></script>
@@ -75,17 +131,63 @@
     <script src="bower_components/js-xlsx/xlsx.js"></script>
     <script src="bower_components/js-xlsx/dist/ods.js"></script>
     <script src="bower_components/js-xlsx/dist/cpexcel.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/jvectormap/jquery.jvectormap.min.js"></script>
+    <script src="bower_components/jvectormap/jquery-jvectormap-continents-mill.js"></script>
+    <script src="bower_components/oclazyload/dist/ocLazyLoad.js"></script>
+    <script src="bower_components/tinycolor/tinycolor.js"></script>
+    <script src="bower_components/ng-sortable/dist/ng-sortable.js"></script>
+    <script src="bower_components/ng-knob/dist/ng-knob.js"></script>
+    <script src="bower_components/angular-schema-instantiator/src/instantiator.js"></script>
+    <script src="bower_components/angular-schema-instantiator/src/angular-instantiator.js"></script>
+    <script src="bower_components/angular-uuid4/angular-uuid4.js"></script>
+    <script src="bower_components/pluralize/pluralize.js"></script>
+    <script src="bower_components/validate/validate.js"></script>
+    <script src="bower_components/parse/parse.min.js"></script>
+    <script src="bower_components/angular-jsonapi/dist/angular-jsonapi.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
-    <script src="scripts/theme/components/mud-components.js"></script>
-    <script src="scripts/theme/components/pageTop/pageTop.directive.js"></script>
-    <script src="scripts/theme/directives/scrollPosition.js"></script>
+    <script src="scripts/theme/modules/plugInLoader.js"></script>
+    <script src="scripts/theme/modules/vcmap.js"></script>
+    <script src="scripts/theme/modules/RecursionHelper.js"></script>
+
     <script src="scripts/mudhead.js"></script>
-    <script src="scripts/MudCtrl.js" charset="utf-8"></script>
+    <script src="scripts/models/region.js"></script>
+    <script src="scripts/MudCtrl.js"></script>
+
+
+
+    <script src="scripts/theme/components/pageTop/pageTop.directive.js"></script>
+    <script src="scripts/theme/components/sideNav/sideNav.directive.js"></script>
+    <script src="scripts/theme/components/sideNav/sideNavLink.directive.js"></script>
+    <script src="scripts/theme/components/sideNav/sideNavToggle.directive.js"></script>
+    <script src="scripts/theme/components/menuLink/menuLink.directive.js"></script>
+    <script src="scripts/theme/components/menuToggle/menuToggle.directive.js"></script>
+    <script src="scripts/theme/components/appPanel/appPanel.directive.js"></script>
+    <script src="scripts/theme/components/appPanel/appPanel.service.js"></script>
+    <script src="scripts/theme/components/appPanel/appPanelBlur.directive.js"></script>
+    <script src="scripts/theme/components/appPanel/appPanelBlur.service.js"></script>
+    <script src="scripts/theme/components/appPanel/appPanelSelf.directive.js"></script>
+    <script src="scripts/theme/components/charts/hcPie/hcPie.directive.js"></script>
+    <script src="scripts/theme/components/appCollection/appCollection.directive.js"></script>
+    <script src="scripts/theme/directives/jsonformatter.js"></script>
+
+
+    <script src="scripts/theme/directives/scrollPosition.js"></script>
+    <script src="scripts/theme/directives/aLink.js"></script>
+
+    <script src="scripts/theme/services/appConfigProvider.js"></script>
+    <script src="scripts/theme/services/menuFactory.js"></script>
+
+    <script src="scripts/theme/filters/toHuman.js"></script>
+    <script src="scripts/theme/filters/nospace.js"></script>
+
+    <script src="contents/two/twoctrl.js"></script>
+
     <!-- endbuild -->
+
+
 
   </body>
 </html>

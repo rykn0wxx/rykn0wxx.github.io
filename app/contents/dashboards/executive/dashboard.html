@@ -1,0 +1,35 @@
+<div class="content dashboard" layout="column" layout-padding>
+
+	<section layout="row" layout-align="start" flex>
+		<md-input-container flex="30" md-theme="app-dark" >
+			<label>KPI Selector</label>
+			<md-select placeholder="Select a kpi" name="kpiSelector" ng-model="kpiSelector" md-selected-text="selectChange()">
+				<md-optgroup label="items">
+          <md-option ng-value="kpi.name" ng-repeat="kpi in data">{{kpi.name}}</md-option>
+        </md-optgroup>
+			</md-select>
+			<div class="errors" ng-messages="myForm.favoriteColor.$error">
+				<div ng-message="required">Required</div>
+			</div>
+		</md-input-container>
+	</section>
+
+	<section layout="row" layout="center center">
+		<div class="globe-holder">
+			<img ng-src="images/stef-logo.png" alt="">
+			<div class="global-info md-whiteframe-5dp">
+				{{ glbal }}
+			</div>
+		</div>
+		<div flex class="map-holder">
+	    <vect-map config="config" class="map-map"></vect-map>
+	  </div>
+	</section>
+
+	<section>
+		<div class="hc-box">
+			<highchart config="chartConfig"></highchart>
+		</div>
+	</section>
+
+</div>

@@ -1,0 +1,15 @@
+<ul class="metismenu sidebar-menu">
+
+  <li class="menu-heading">
+
+    <h4 class="md-subhead">Main Navigation</h4>
+
+  </li>
+
+  <li class="treeview" ng-repeat="section in sections">
+    <side-nav-toggle ng-if="section.type === 'toggle'" section="section"></side-nav-toggle>
+
+    <side-nav-link ng-if="section.type === 'link'" section="section"></side-tree-link>
+  </li>
+
+</ul>

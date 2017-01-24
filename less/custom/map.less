@@ -1,0 +1,46 @@
+// Map Styles
+
+.rykn0wxx {
+  .map-holder {
+    min-height: 340px;
+    height: 340px;
+    max-height: 340px;
+    min-width: 840px;
+    width: 840px;
+    max-width: 840px;
+    margin: 0 auto;
+    .jvectormap-container {
+      > svg {
+        box-sizing: content-box !important;
+        &::before, &:active {
+          box-sizing: content-box !important;
+        }
+      }
+    }
+    /*
+    &::before,
+    &::after {
+      content: '';
+      display: table;
+    }
+    &::after {
+      clear: both;
+    }
+    */
+    .map-map {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      height: 100%;
+      width: 100%;
+      box-sizing: content-box;
+      > circle {
+        &.jvectormap-marker {
+          &.jvectormap-element {
+            box-shadow: 0 20px 10px -30px rgba(0,0,0,0.5);
+          }
+        }
+      }
+    }
+  }
+}

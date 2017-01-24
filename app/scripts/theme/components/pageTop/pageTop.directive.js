@@ -7,15 +7,15 @@
  * # pageTop
  */
 angular
-.module('mud-theme')
+.module('mudhead')
 .directive('pageTop', PageTopDirective);
 
-function PageTopDirective (mdTheming, mdMedia) {
+function PageTopDirective (mdTheming, mdMedia, mdSidenav, $t) {
   return ({
     restrict: 'E',
     replace: true,
     templateUrl: 'scripts/theme/components/pageTop/pageTop.html',
-    link: function pagetTopPostLink (scope, elem) {
+    link: function pageTopPostLink (scope, elem) {
       mdTheming(elem);
       elem.addClass('_md');
       scope.$watch(function () {
@@ -23,8 +23,12 @@ function PageTopDirective (mdTheming, mdMedia) {
       }, function (isXs) {
         scope.isSmall = isXs;
       });
+
+      scope.toggler = function () {
+        mdSidenav('666').toggle();
+      }
     }
   });
 }
   /** @ngInject */
-PageTopDirective.$inject = ['$mdTheming', '$mdMedia'];
+PageTopDirective.$inject = ['$mdTheming', '$mdMedia', '$mdSidenav', '$timeout'];

@@ -1,0 +1,20 @@
+<md-button ng-if="section.type === 'toggle'" aria-controls="app-tree-{{section.name}}-{{section.id}}" class="md-button-toggle" aria-expanded="false">
+  <div flex layout="row">
+    <span class="md-item-icon">
+      <i class="fa fa-dashboard"></i>
+    </span>
+    <span class="sect-name">{{section.name}}</span>
+    <span flex></span>
+    <span aria-hidden="true" class="md-toggle-icon">
+      <i class="fa fa-angle-up"></i>
+    </span>
+  </div>
+  <span class="md-visually-hidden">
+    Toggle collapsed
+  </span>
+</md-button>
+<ul id="app-tree-{{section.name}}-{{section.id}}" class="treeview-menu menu-toggle-list" aria-expanded="false">
+  <li ng-repeat="page in section.pages">
+    <sd-nav-link section="page"></sd-nav-link>
+  </li>
+</ul>

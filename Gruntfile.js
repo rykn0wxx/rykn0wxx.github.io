@@ -8,7 +8,8 @@ module.exports = function (grunt) {
   // Automatically load required Grunt tasks
   require('jit-grunt')(grunt, {
     useminPrepare: 'grunt-usemin',
-    ngtemplates: 'grunt-angular-templates'
+    ngtemplates: 'grunt-angular-templates',
+    json_server: 'grunt-json-server'
   });
 
   // Configurable paths for the application
@@ -17,7 +18,8 @@ module.exports = function (grunt) {
     dist: 'dist',
     host: require('./bower.json').host,
     port: require('./bower.json').port,
-    live: require('./bower.json').live
+    live: require('./bower.json').live,
+    jserver: require('./bower.json').jserver
   };
 
   // Define the configuration for all the tasks
@@ -52,7 +54,10 @@ module.exports = function (grunt) {
 			},
       bower: {
         files: ['bower.json'],
-        tasks: ['wiredep']
+        tasks: ['wiredep'],
+        options: {
+          livereload: '<%= connect.options.livereload %>'
+        }
       },
       js: {
         files: ['<%= kill.app %>/scripts/{,*/}*.js'],
@@ -77,6 +82,10 @@ module.exports = function (grunt) {
         },
         files: [
           '<%= kill.app %>/**/*.html',
+          '<%= kill.app %>/contents/**/*.html',
+          '<%= kill.app %>/contents/**/*.js',
+          '<%= kill.app %>/contents/one/**/*.js',
+          '<%= kill.app %>/contents/two/**/*.js',
           '<%= kill.app %>/**/*.js',
           '.tmp/styles/{,*/}*.css',
 					'less/**/*.less',
@@ -89,12 +98,10 @@ module.exports = function (grunt) {
     less: {
       dev: {
         options: {
-          paths: ['less'],
           compress: false
         },
         files: {
-          '<%= kill.app %>/styles/kohana.css' : 'less/kohana.less',
-					'<%= kill.app %>/styles/roboto.css' : 'less/roboto.less'
+          '<%= kill.app %>/styles/kohana.css' : 'less/kohana.less'
         }
       }
     },
@@ -102,8 +109,8 @@ module.exports = function (grunt) {
     // Api Server
     json_server: {
 			options: {
-				port: 13337,
-				hostname: 'localhost',
+				port: '<%= kill.jserver %>',
+				hostname: '<%= kill.host %>',
 				db: 'api/db.json'
 			},
 			target: {
@@ -114,9 +121,9 @@ module.exports = function (grunt) {
     // The actual grunt server settings
     connect: {
       options: {
-        port: 1983,
+        port: '<%= kill.port %>',
         // Change this to '0.0.0.0' to access the server from outside.
-        hostname: 'localhost',
+        hostname: '<%= kill.host %>',
         //livereload: 35729
 				livereload: 35728
       },
@@ -489,6 +496,7 @@ module.exports = function (grunt) {
   		'postcss:server',
   		'connect:livereload',
   		//'browserSync',
+      //'concurrent:jsonwatch'
   		'watch'
     ]);
 

@@ -10,11 +10,17 @@
     </section>
 
 
-    <md-button class="md-icon-button launch" aria-label="Dashboard" ng-href="/">
+    <md-button ng-click="toggler()" class="md-icon-button launch" aria-label="Dashboard">
       <md-icon><i class="fa fa-bars"></i></md-icon>
     </md-button>
 
-    <span flex flex-gt-sm="70"></span>
+    <div layout="row" class="fill-height">
+      <h4 class="md-toolbar-item">
+        <span class="md-breadcrumb">{{menu.currentPage | toHuman}}</span>
+      </h4>
+    </div>
+
+    <span flex flex-gt-sm="50"></span>
 
   </div>
 

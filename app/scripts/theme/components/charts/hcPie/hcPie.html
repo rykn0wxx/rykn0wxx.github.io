@@ -1,0 +1,13 @@
+<div layout="row" layout-margin layout-wrap layout-align="space-around">
+    <md-whiteframe flex="25" class="md-whiteframe-4dp" layout-align="center center" ng-repeat="pie in pieData">
+      <div app-panel>
+        <div class="chart-item" layout="row">
+          <ui-knob value="value" options="options"></ui-knob>
+          <div class="description">
+            <div class="md-subhead">{{ ::pie.name }}</div>
+            <div class="description-stats">{{ ::pie.data.GL }}</div>
+          </div>
+        </div>
+      </div>
+    </md-whiteframe>
+</div>

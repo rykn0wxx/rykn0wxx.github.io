@@ -1,0 +1,31 @@
+<div class="content" layout="row" layout-padding>
+
+  <div flex="50">
+
+    <form name="dynamicForm">
+
+      <div layout-gt-xs="row">
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>City</label>
+          <input ng-model="user.city">
+        </md-input-container>
+
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>State</label>
+          <md-select ng-model="user.state">
+            <md-option ng-repeat="state in states" value="{{state.abbrev}}">
+              {{state.abbrev}}
+            </md-option>
+          </md-select>
+        </md-input-container>
+      </div>
+
+    </form>
+
+  </div>
+  <span flex></span>
+  <div flex="40">
+asd
+  </div>
+
+</div>

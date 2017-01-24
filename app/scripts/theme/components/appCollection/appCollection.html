@@ -1,0 +1,33 @@
+<div layout="column">
+
+  <div layout="row" layout-align="start">
+    <md-input-container flex="30">
+      <label>Forms</label>
+      <md-select ng-model="selectedItem" md-selected-text="getSelectedText()">
+        <md-optgroup label="forms">
+          <md-option ng-value="scheme.name" ng-repeat="scheme in data">{{scheme.name}}</md-option>
+        </md-optgroup>
+      </md-select>
+    </md-input-container>
+    <span flex></span>
+    <div ng-if="formRender" flex="65">
+      <div app-panel>
+        <form id="collForm" class="form-horizontal" name="collForm" md-theme="form-dark">
+          <md-input-container class="md-block" ng-repeat="(propKey, propValue) in formData.schema.properties">
+            <label for="{{propKey}}">{{propKey | uppercase}}</label>
+            <input ng-if="!propValue.enum" required name="{{propKey}}" id="{{propKey}}" ng-model="formInput" minlength="{{propValue.minLength}}" maxlength="{{propValue.maxLength}}" />
+            <md-select id="{{propKey}}" ng-if="propValue.enum" name="{{propKey}}" id="{{propKey}}" ng-model="formSelect" required>
+              <md-option ng-value="item" ng-repeat="item in propValue.enum">Item {{item}}</md-option>
+            </md-select>
+          </md-input-container>
+          <div layout="row" layout-align="end" flex>
+            <md-button ng-click="clearValue()" class="md-warn">Clear</md-button>
+            <md-button ng-click="save()" class="md-accent">Save</md-button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+</div>

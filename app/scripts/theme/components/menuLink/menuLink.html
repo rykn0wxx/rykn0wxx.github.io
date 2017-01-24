@@ -1,0 +1,9 @@
+<md-button ng-class="{'active' : isSelected()}" ng-href="#!{{section.url}}" ng-click="focusSection()">
+  <span class="md-icon">
+    <i class="fa fa-circle-o"></i>
+  </span>
+  <span>{{section | toHuman}}</span>
+  <span class="md-visually-hidden" ng-if="isSelected()">
+    current page
+  </span>
+</md-button>

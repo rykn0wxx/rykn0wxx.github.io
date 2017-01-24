@@ -7,7 +7,7 @@
  * # scrollPosition
  */
 angular
-.module('mud-theme')
+.module('mudhead')
 .directive('scrollPosition', ScrollPositionDirective);
 
 function ScrollPositionDirective ($w, mdTheming) {

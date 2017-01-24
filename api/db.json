@@ -1,0 +1,139 @@
+{
+	"pages": [{
+		"id": 0,
+		"name": "AMKOR",
+		"type": "heading",
+		"children": [{
+			"name": "Executive",
+			"type": "toggle",
+			"pages": [{
+				"name": "Executive Dashboard",
+				"type": "link",
+				"url": "/dashboards/executive/dashboard"
+			}, {
+				"name": "Executive Drilldown",
+				"type": "link",
+				"url": "/dashboards/executive/drilldown"
+			}]
+		}, {
+			"name": "SDM",
+			"type": "toggle",
+			"pages": [{
+				"name": "SDM Dashboard",
+				"type": "link",
+				"url": "/dashboards/sdm/dashboard"
+			}, {
+				"name": "SDM Drilldown",
+				"type": "link",
+				"url": "/dashboards/sdm/drilldown"
+			}]
+		}, {
+			"name": "My Version",
+			"type": "toggle",
+			"pages": [{
+				"name": "Executive Dashboard",
+				"type": "link",
+				"url": "/dashboards/version2/dashboard"
+			}, {
+				"name": "Executive Drilldown",
+				"type": "link",
+				"url": "/dashboards/version2/drilldown"
+			}]
+		}]
+	}, {
+		"id": 1,
+		"name": "KPI",
+		"type": "heading",
+		"children": [{
+			"type": "link",
+			"name": "GainLoss",
+			"url": "/kpi/gainloss/gainloss.html"
+		}, {
+			"type": "link",
+			"name": "Correlation",
+			"url": "/kpi/correlation/correlation.html"
+		}]
+	}],
+	"scheme": [{
+		"id": 0,
+		"name": "pageschema",
+		"schema": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string"
+				},
+				"type": {
+					"type": "string",
+					"enum": ["toggle", "link", "heading"]
+				},
+				"children": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"name": {
+								"type": "string"
+							},
+							"type": {
+								"type": "string",
+								"enum": ["toggle", "link", "heading"]
+							},
+							"pages": {
+								"type": "array",
+								"items": {
+									"type": "object",
+									"properties": {
+										"name": {
+											"type": "string"
+										},
+										"type": {
+											"type": "string",
+											"enum": ["toggle", "link", "heading"]
+										},
+										"url": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"name",
+										"type",
+										"url"
+									]
+								}
+							}
+						},
+						"required": [
+							"name",
+							"type",
+							"pages"
+						]
+					}
+				}
+			},
+			"required": [
+				"name",
+				"type",
+				"children"
+			]
+		}
+	}, {
+		"id": 1,
+		"name": "region",
+		"schema": {
+		  "type": "object",
+		  "properties": {
+		    "name": {
+		      "type": "string"
+		    },
+		    "code": {
+		      "type": "string"
+		    }
+		  },
+		  "required": [
+		    "name",
+		    "code"
+		  ]
+		}
+	}]
+}

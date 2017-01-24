@@ -10,6 +10,7 @@
   "host": "localhost",
   "port": "1983",
   "live": "35728",
+  "jserver": "13337",
   "license": "ISC",
   "keywords": [
     "kpi"
@@ -34,6 +35,8 @@
     "angular-route": "^1.6.1",
     "angular-aria": "^1.6.1",
     "angular-cookies": "^1.6.1",
+    "angular-resource": "^1.6.1",
+    "angular-ui-router": "^0.3.2",
     "angular-material": "^1.1.1",
     "angular-file-upload": "^2.4.1",
     "moment": "^2.17.1",
@@ -47,7 +50,12 @@
     "js-xlsx": "^0.8.1",
     "jvectormap": "^2.0.4",
     "font-awesome": "^4.7.0",
-    "angular-resource": "^1.6.1"
+    "oclazyload": "^1.0.9",
+    "tinycolor": "^1.4.1",
+    "ng-sortable": "^1.3.7",
+    "ng-knob": "^0.1.3",
+    "angular-schema-instantiator": "^0.4.2",
+    "angular-jsonapi": "^1.0.0-alpha.7"
   },
   "overrides": {
     "angular-file-upload": {
@@ -89,6 +97,18 @@
     }
   },
   "devDependencies": {
-    "bootstrap-less": "^3.3.4"
+    "bootstrap-less": "^3.3.4",
+    "animate.css": "^3.5.2",
+    "bootswatch": "^3.3.7",
+    "bootstrap-css": "^3.3.6",
+    "angular-bootstrap": "^2.4.0",
+    "metisMenu": "^2.6.1",
+    "json3": "^3.3.2",
+    "angular-loading-bar": "^0.9.0",
+    "angular-chart.js": "^1.1.1",
+    "angular-toggle-switch": "^1.3.0",
+    "tcomb": "^3.2.16",
+    "tcomb-validation": "^3.3.0",
+    "faker": "Faker#^3.1.0"
   }
 }

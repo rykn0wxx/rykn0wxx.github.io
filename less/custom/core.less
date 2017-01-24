@@ -43,12 +43,11 @@ body {
 	text-shadow: none !important;
 	&.rykn0wxx {
 		font-size: 1.6rem;
-		#gradient > .vertical-three-colors(lighten(#596169, 3%), #596169, 60%, darken(#596169, 6%));
+		#gradient > .vertical-three-colors(darken(#596169, 5%), darken(#596169, 8%), 60%, darken(#596169, 12%));
 		color: #ecf0f5;
 		.wrapper {
-			width: 100%;
-			min-height: 100%;
-			height: 100%;
+			max-width: 100%;
+			max-height: 100%;
 			position: relative;
 			overflow: hidden;
 		}
@@ -96,9 +95,15 @@ body {
 	.glow-z1 {
 		box-shadow: 0px 20px 25px -10px rgba(0, 0, 0, 0.2);
 	}
+	.glow-z2 {
+		box-shadow: 0px 20px 25px -10px rgba(0, 0, 0, 0.2), 0px 0px 1px 1px rgba(0, 0, 0, 0.14);
+	}
 	.wrapper {
 		md-toolbar {
 			min-height: 50px;
 		}
+	}
+	.md-breadcrumb {
+		font-weight: 400 !important;
 	}
 }
