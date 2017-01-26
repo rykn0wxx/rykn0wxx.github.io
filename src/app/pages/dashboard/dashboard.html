@@ -1,4 +1,19 @@
 <dashboard-pie-chart></dashboard-pie-chart>
+<style>
+.form-control {
+  background-color rgba(0,0,0,0.1);
+}
+</style>
+<div class="row">
+  <div class="col-md-3 col-xs-6">
+    <div class="form-group">
+        <label>Select</label>
+        <select class="form-control" style="background:#222d32;color:#c8c8c8;" on-change="testFunc($event)">
+          <option ng-repeat="opt in selOp">{{opt}}</option>
+        </select>
+      </div>
+  </div>
+</div>
 
 <div class="row">
   <div class="col-lg-6 col-md-12 col-sm-12"

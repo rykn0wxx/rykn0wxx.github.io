@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="../bower_components/ng-admin/build/ng-admin.min.css" />
+</head>
+<body>
+
+  <div ui-view="ng-admin"></div>
+
+  <script type="text/javascript" src="../bower_components/ng-admin/build/ng-admin.min.js"></script>
+
+  <script type="text/javascript">
+    (function () {
+      var myApp = angular.module('myApp', ['ng-admin']);
+      myApp.config(['NgAdminConfigurationProvider', function (nga) {
+        var admin = nga.application('My First Admin')
+          .baseApiUrl('http://jsonplaceholder.typicode.com/');
+        var regions = nga.entity('users');
+        // regions.listView().fields([
+        //   nga.field('region_name'),
+        //   nga.field('region_code'),
+        //   nga.field('region_short_code')
+        // ]);
+        regions.listView().fields([
+        nga.field('name'),
+        nga.field('username'),
+        nga.field('email')
+        ]);
+        admin.addEntity(regions);
+        console.log(admin);
+        nga.configure(admin);
+      }]);
+    })();
+  </script>
+</body>
+</html>
